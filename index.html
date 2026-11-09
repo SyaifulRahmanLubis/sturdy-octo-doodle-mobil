@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maison Auto — Showroom Mobil Mewah</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ece9e3;--surface:#f6f4f0;--ink:#1d1a17;--mute:#6f6a62;--line:#cfc9bf;--accent:#7a1f2b;--on-accent:#fff;--gold:#a8864a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--surface:#1f1c17;--ink:#f0ebe2;--mute:#a39c8f;--line:#38332b;--accent:#c24a5a;--gold:#c9a86a}}
+:root[data-theme="dark"]{--bg:#15130f;--surface:#1f1c17;--ink:#f0ebe2;--mute:#a39c8f;--line:#38332b;--accent:#c24a5a;--gold:#c9a86a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Manrope,system-ui,sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;margin:0;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font:600 26px "Cormorant Garamond",serif;text-decoration:none;letter-spacing:.02em}
+nav a{margin-left:22px;text-decoration:none;font-size:14px;color:var(--mute)}
+nav a:hover{color:var(--ink)}
+.hero{padding:40px 0 20px;display:grid;gap:10px}
+.hero h1{font-size:clamp(48px,10vw,120px);letter-spacing:-.02em;max-width:11ch}
+.hero p{max-width:46ch;color:var(--mute);margin:14px 0 0}
+.stage{position:relative;margin-top:10px;border-top:1px solid var(--line);padding-top:10px}
+.stage svg{width:100%;max-width:880px;display:block;margin:0 auto;animation:roll 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes roll{from{transform:translateX(-14%);opacity:0}to{transform:none;opacity:1}}
+.floor{height:14px;margin:-6px auto 0;max-width:760px;background:radial-gradient(ellipse at center,rgba(0,0,0,.35),transparent 70%)}
+.sw{display:flex;gap:10px;justify-content:center;align-items:center;margin:16px 0 0;font-size:14px;color:var(--mute)}
+.sw button{width:30px;height:30px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line);cursor:pointer;padding:0}
+.sw button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink)}
+section{padding:70px 0 10px}
+.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:16px;margin-bottom:26px}
+.head h2{font-size:clamp(34px,5vw,54px)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{font:500 14px Manrope,sans-serif;padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.card .pic{padding:22px 18px 6px;background:linear-gradient(var(--surface),var(--bg))}
+.card .body{padding:16px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:28px}
+.meta{color:var(--mute);font-size:14px}
+.price{font:600 22px "Cormorant Garamond",serif;color:var(--accent);margin-top:auto;padding-top:10px}
+.btn{font:700 14px Manrope,sans-serif;padding:12px 20px;border:0;border-radius:2px;background:var(--accent);color:var(--on-accent);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--ink)}
+.row{display:flex;gap:10px;margin-top:10px}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px;border-top:1px solid var(--line);padding-top:30px}
+.why h3{font-size:26px;margin-bottom:6px}
+.why p{margin:0;color:var(--mute);font-size:15px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;align-items:start}
+.contact h2{font-size:clamp(34px,5vw,54px);margin-bottom:12px}
+form{display:grid;gap:12px}
+label{font-size:14px;color:var(--mute);display:grid;gap:4px}
+input,select,textarea{font:inherit;padding:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:2px;width:100%}
+footer{margin-top:80px;border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mute);font-size:13px}
+dialog{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;max-width:560px;width:calc(100% - 32px);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+.dl{padding:22px}
+.dl h3{font-size:34px}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:16px 0}
+.spec div{background:var(--surface);padding:10px 14px;font-size:14px}
+.spec b{display:block;font-size:12px;color:var(--mute);font-weight:500}
+.x{float:right;background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer;line-height:1}
+@media (max-width:560px){nav a:not(:last-child){display:none}}
+@media (prefers-reduced-motion:reduce){.stage svg{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="car" viewBox="0 0 400 150">
+<path d="M14 108c0-14 6-22 26-26l58-14c22-18 52-30 100-30 44 0 74 14 96 36l56 10c22 5 36 12 36 26v10c0 4-3 6-7 6h-24a44 44 0 0 0-86 0H132a44 44 0 0 0-86 0H20c-4 0-6-4-6-8z" fill="var(--c,#7a1f2b)"/>
+<path d="M112 70c22-16 48-26 92-26 36 0 62 12 80 30l-168-2z" fill="#0d1318" opacity=".82"/>
+<path d="M205 46v28M112 70l168 4" stroke="var(--c,#7a1f2b)" stroke-width="3" opacity=".7"/>
+<path d="M30 100h340" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+<g><circle cx="90" cy="112" r="30" fill="#111"/><circle cx="90" cy="112" r="17" fill="#c9c9c9"/><circle cx="90" cy="112" r="5" fill="#333"/></g>
+<g><circle cx="312" cy="112" r="30" fill="#111"/><circle cx="312" cy="112" r="17" fill="#c9c9c9"/><circle cx="312" cy="112" r="5" fill="#333"/></g>
+</symbol></svg>
+
+<div class="wrap">
+<header>
+  <a class="logo" href="#">Maison Auto</a>
+  <nav><a href="#koleksi">Koleksi</a><a href="#layanan">Layanan</a><a href="#kontak">Kontak</a></nav>
+</header>
+
+<div class="hero">
+  <h1>Mobil yang layak dimiliki.</h1>
+  <p>Koleksi mobil mewah pilihan dengan riwayat jelas, inspeksi 200 titik, dan pendampingan sampai kunci berpindah tangan.</p>
+  <div class="stage">
+    <svg viewBox="0 0 400 150" id="hero" role="img" aria-label="Ilustrasi mobil sport" style="--c:#7a1f2b"><use href="#car"/></svg>
+    <div class="floor"></div>
+    <div class="sw" role="group" aria-label="Pilih warna">Warna
+      <button style="background:#7a1f2b" aria-label="Merah anggur" aria-pressed="true" data-c="#7a1f2b"></button>
+      <button style="background:#1f3a5f" aria-label="Biru malam" aria-pressed="false" data-c="#1f3a5f"></button>
+      <button style="background:#c9c5bc" aria-label="Perak" aria-pressed="false" data-c="#c9c5bc"></button>
+      <button style="background:#1e4a3a" aria-label="Hijau pacu" aria-pressed="false" data-c="#1e4a3a"></button>
+      <button style="background:#242424" aria-label="Hitam" aria-pressed="false" data-c="#242424"></button>
+    </div>
+  </div>
+</div>
+
+<section id="koleksi">
+  <div class="head">
+    <h2>Koleksi saat ini</h2>
+    <div class="chips" id="chips" role="group" aria-label="Filter tipe"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="layanan">
+  <div class="head"><h2>Cara kami bekerja</h2></div>
+  <div class="why">
+    <div><h3>Inspeksi 200 titik</h3><p>Mesin, transmisi, bodi, dan elektronik diperiksa teknisi bersertifikat. Laporannya Anda terima utuh.</p></div>
+    <div><h3>Riwayat transparan</h3><p>Catatan servis, kepemilikan, dan odometer diverifikasi sebelum mobil kami tayangkan.</p></div>
+    <div><h3>Pembiayaan fleksibel</h3><p>Simulasi cicilan dari beberapa bank mitra, dengan tenor 1 sampai 5 tahun.</p></div>
+    <div><h3>Antar sampai rumah</h3><p>Pengurusan surat, asuransi, dan pengiriman unit ke alamat Anda.</p></div>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="contact">
+    <div>
+      <h2>Jadwalkan kunjungan</h2>
+      <p class="meta">Kami buka Senin–Sabtu, 09.00–18.00 WIB. Isi formulir, lalu pesan Anda terkirim lewat WhatsApp ke tim penjualan.</p>
+    </div>
+    <form id="f">
+      <label>Nama<input name="n" required autocomplete="name"></label>
+      <label>Mobil yang diminati<select name="m" id="msel"></select></label>
+      <label>Pesan<textarea name="p" rows="3" placeholder="Contoh: Saya ingin test drive hari Sabtu."></textarea></label>
+      <button class="btn" type="submit">Kirim lewat WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<footer>© 2026 Maison Auto. Data mobil dan harga pada halaman ini adalah contoh; ganti dengan stok asli Anda.</footer>
+</div>
+
+<dialog id="dlg"><div class="dl" id="dl"></div></dialog>
+
+<script>
+var WA="6281234567890";
+var cars=[
+{n:"Porsche 911 Carrera S",t:"Sport",y:2023,km:"8.200 km",p:4950,c:"#c9c5bc",e:"3.0L Twin-Turbo Flat-6",hp:"443 hp",tr:"PDK 8-percepatan",ac:"3,5 detik"},
+{n:"Lamborghini Urus",t:"SUV",y:2022,km:"12.500 km",p:8900,c:"#1e4a3a",e:"4.0L Twin-Turbo V8",hp:"650 hp",tr:"Otomatis 8-percepatan",ac:"3,6 detik"},
+{n:"Mercedes-Maybach S 580",t:"Sedan",y:2023,km:"6.000 km",p:7450,c:"#242424",e:"4.0L Twin-Turbo V8",hp:"496 hp",tr:"9G-Tronic",ac:"4,8 detik"},
+{n:"Bentley Continental GT",t:"Coupe",y:2021,km:"15.800 km",p:6200,c:"#1f3a5f",e:"4.0L Twin-Turbo V8",hp:"542 hp",tr:"Dual-clutch 8-percepatan",ac:"4,0 detik"},
+{n:"Ferrari Roma",t:"Coupe",y:2022,km:"5.400 km",p:10800,c:"#7a1f2b",e:"3.9L Twin-Turbo V8",hp:"612 hp",tr:"Dual-clutch 8-percepatan",ac:"3,4 detik"},
+{n:"Range Rover Autobiography",t:"SUV",y:2023,km:"9.100 km",p:5300,c:"#242424",e:"3.0L Inline-6 Mild Hybrid",hp:"395 hp",tr:"Otomatis 8-percepatan",ac:"5,9 detik"}];
+var rp=function(v){return "Rp "+(v/1000).toLocaleString("id-ID",{minimumFractionDigits:2,maximumFractionDigits:2})+" miliar"};
+var pic=function(c){return '<svg viewBox="0 0 400 150" style="--c:'+c+'"><use href="#car"/></svg>'};
+var grid=document.getElementById("grid"),chips=document.getElementById("chips"),sel=document.getElementById("msel");
+var types=["Semua","SUV","Sport","Sedan","Coupe"],cur="Semua";
+function draw(){
+ grid.innerHTML=cars.map(function(c,i){return (cur==="Semua"||c.t===cur)?
+ '<article class="card"><div class="pic">'+pic(c.c)+'</div><div class="body"><h3>'+c.n+'</h3><div class="meta">'+c.t+' · '+c.y+' · '+c.km+'</div><div class="price">'+rp(c.p)+'</div><div class="row"><button class="btn" data-i="'+i+'">Lihat detail</button></div></div></article>':""}).join("");
+}
+chips.innerHTML=types.map(function(t){return '<button aria-pressed="'+(t===cur)+'">'+t+'</button>'}).join("");
+chips.onclick=function(e){var b=e.target.closest("button");if(!b)return;cur=b.textContent;
+ [].forEach.call(chips.children,function(x){x.setAttribute("aria-pressed",x===b)});draw()};
+sel.innerHTML='<option>Belum menentukan</option>'+cars.map(function(c){return '<option>'+c.n+'</option>'}).join("");
+var dlg=document.getElementById("dlg"),dl=document.getElementById("dl");
+grid.onclick=function(e){var b=e.target.closest("[data-i]");if(!b)return;var c=cars[b.dataset.i];
+ dl.innerHTML='<button class="x" aria-label="Tutup" onclick="dlg.close()">×</button><h3>'+c.n+'</h3>'+pic(c.c)+
+ '<div class="spec"><div><b>Tahun</b>'+c.y+'</div><div><b>Jarak tempuh</b>'+c.km+'</div><div><b>Mesin</b>'+c.e+'</div><div><b>Tenaga</b>'+c.hp+'</div><div><b>Transmisi</b>'+c.tr+'</div><div><b>0–100 km/jam</b>'+c.ac+'</div></div>'+
+ '<div class="price" style="padding:0">'+rp(c.p)+'</div><div class="row"><a class="btn" href="https://wa.me/'+WA+'?text='+encodeURIComponent("Halo, saya tertarik dengan "+c.n+".")+'" target="_blank" rel="noopener">Tanya via WhatsApp</a><button class="btn ghost" onclick="dlg.close()">Tutup</button></div>';
+ dlg.showModal()};
+dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+document.querySelector(".sw").onclick=function(e){var b=e.target.closest("button");if(!b)return;
+ document.getElementById("hero").style.setProperty("--c",b.dataset.c);
+ [].forEach.call(this.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b)})};
+document.getElementById("f").onsubmit=function(e){e.preventDefault();var d=new FormData(this);
+ var t="Halo, saya "+d.get("n")+". Saya tertarik dengan: "+d.get("m")+". "+(d.get("p")||"");
+ window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(t),"_blank")};
+draw();
+</script>
+</body>
+</html>
